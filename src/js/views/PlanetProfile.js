@@ -1,8 +1,5 @@
-// import React from "react";
-
-// export const CharacterProfile = () => {
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import "../../styles/demo.css";
 
 const PlanetProfile = () => {
@@ -26,6 +23,8 @@ const PlanetProfile = () => {
   if (!planet) {
     return <div style={{ fontSize: "50px", color: "white" }}>Loading...</div>;
   }
+  const backupImageUrl =
+    "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d71e379b-3f09-42b2-b3fe-26548591a750/dev18o2-7a23f26b-cd6d-4dee-83da-2eafe12c465e.jpg/v1/fill/w_894,h_894,q_70,strp/tatooine_star_wars_planet_collection_by_ericwhitted_dev18o2-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAwMCIsInBhdGgiOiJcL2ZcL2Q3MWUzNzliLTNmMDktNDJiMi1iM2ZlLTI2NTQ4NTkxYTc1MFwvZGV2MThvMi03YTIzZjI2Yi1jZDZkLTRkZWUtODNkYS0yZWFmZTEyYzQ2NWUuanBnIiwid2lkdGgiOiI8PTEwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Z41Tsx74iElwppUJxze7ViuNOj7RMduFscr7HCpG21U";
 
   const {
     name,
@@ -41,8 +40,16 @@ const PlanetProfile = () => {
   return (
     <div style={{ backgroundColor: "black", color: "white", marginBottom: "0", justifyContent: "center", textAlign: "center" }}>
       <div className="d-flex justify-content-center">
-        <img src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} style={{ padding: "0px 30px 30px 0px" }} />
-        <div style={{ width: "50vh" }}>
+      <img
+          src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}
+          onError={(e) => {
+            e.target.onerror = null;
+            e.target.src = backupImageUrl;
+          }}
+          alt={planet.name}
+          style={{ padding: "0px 30px 0px 0px", width: '550px', height: '510px'}}
+        />
+        <div style={{ width: "60vh" }}>
           <h1>{name}</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elit sapien, scelerisque ac risus eu, rhoncus mattis dui. Morbi in vestibulum
@@ -57,7 +64,7 @@ const PlanetProfile = () => {
         </div>
       </div>
       <div className="d-flex justify-content-center">
-        <div style={{ color: "white", backgroundColor: "white", width: "130vh", height: "3px" }}></div>
+        <div style={{ color: "white", backgroundColor: "white", width: "130vh", height: "3px", margin: '4vh'}}></div>
       </div>
       <div className="info-container d-flex justify-content-center">
         <p>
@@ -107,4 +114,3 @@ const PlanetProfile = () => {
 };
 
 export default PlanetProfile;
-

@@ -34,7 +34,6 @@ const Planets = () => {
                 e.target.onerror = null;
                 e.target.src = backupImageUrl;
               }}
-              alt={planet.name}
             />
             <h3>{planet.name}</h3>
             <p>Climate: {planet.climate}</p>
