@@ -1,0 +1,13 @@
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid black;
+    padding-top: 30px;
+}
+.info-container p {
+    margin: 1px;
+    flex: 1 1 10px;
+    font-size: 2vh;
+}
+  

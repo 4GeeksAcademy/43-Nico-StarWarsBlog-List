@@ -2,11 +2,19 @@
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto; 
-    white-space: nowrap; 
-  }
+    white-space: nowrap;
+    color: black;
+}
   
-  .card-item {
+.card-item {
     flex: 0 0 auto;
     width: 300px;
-    margin-right: 20px; 
-  }
+    margin-right: 20px;
+}
+.text-center{
+  background-color: black;
+  color: white;
+}
+.mb-3{
+  margin-bottom: 0 !important;
+}
