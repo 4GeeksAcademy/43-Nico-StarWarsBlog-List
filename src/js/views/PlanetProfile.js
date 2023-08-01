@@ -38,7 +38,9 @@ const PlanetProfile = () => {
   } = planet;
 
   return (
-    <div style={{ backgroundColor: "black", color: "white", marginBottom: "0", justifyContent: "center", textAlign: "center" }}>
+    <div style={{
+      backgroundColor: "rgba(0, 0, 0, 0.4)", color: "white", 
+      marginBottom: "0", justifyContent: 'center', textAlign: 'center'}}>
       <div className="d-flex justify-content-center">
       <img
           src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`}

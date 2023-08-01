@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../../styles/demo.css"
+import Planets from "./Planets";
+import {PlanetProfile} from "./PlanetProfile"
 
 const CharacterProfile = () => {
   const { id } = useParams();
@@ -38,7 +40,9 @@ const CharacterProfile = () => {
   } = character;
 
   return (
-    <div style={{ backgroundColor: "black", color: "white", marginBottom: "0", justifyContent: 'center', textAlign: 'center'}}>
+    <div style={{
+       backgroundColor: "rgba(0, 0, 0, 0.4)", color: "white", 
+       marginBottom: "0", justifyContent: 'center', textAlign: 'center'}}>
       <div className="d-flex justify-content-center">
       <img
         src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
@@ -88,7 +92,7 @@ const CharacterProfile = () => {
 
       <div style={{color: 'white', backgroundColor: 'white', height: '10vh', width: '2px'}}></div>
       <p>Homeworld:<br></br><Link to={`/planets/${homeworld.split("/").filter(Boolean).pop()}`}>
-      click here to go to the world
+      Click para ir al planeta donde vive
       </Link></p>
 
       <div style={{color: 'white', backgroundColor: 'white', height: '10vh', width: '2px'}}></div>
@@ -100,4 +104,5 @@ const CharacterProfile = () => {
 };
 
 export default CharacterProfile;
+
 

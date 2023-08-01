@@ -14,12 +14,11 @@ import PlanetsProfile from "./views/PlanetProfile"
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
-
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+					<Navbar/>
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/demo" element={<Demo />} />

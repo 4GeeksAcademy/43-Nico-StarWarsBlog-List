@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import "../../styles/Character.css"
+import { Context } from '../store/appContext.js';
+import { useContext } from 'react';
+import {  useNavigate } from 'react-router-dom';
 
-const Characters = () => {
+const Characters = ({ addToFavorites }) => {
   const [characters, setCharacters] = useState([]);
+  const { actions } = useContext(Context);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -26,17 +31,27 @@ const Characters = () => {
 
   return (
     <div id="Character">
-      <h2>Personajes</h2>
+      <h2 style={{color: "yellow", import: "url('https://fonts.cdnfonts.com/css/star-wars')", fontFamily: "Star wars, sans-serif"}}>Personajes</h2>
       <div className="card-container">
-        {characters.map((character, index) => (
+      {characters.map((character, index) => (
           <div className="card card-item" key={`character-${index}`}>
             <img src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`} />
             <h3>{character.name}</h3>
             <p>Gender: {character.gender}</p>
             <p>Height: {character.height}</p>
-            <div>
-              <a href={`/characters/${character.uid}`} className="btn btn-primary"  style={{marginRight: '40px'}}>Learn more!</a>
-                <i className="fa-regular fa-heart btn"></i>
+            <div style={{justifyContent: "center", textAlign: "center"}}>
+              <a
+                href={`/characters/${character.uid}`}
+                className="btn1 btn-dark"
+                style={{ marginRight: "50px", color: "yellow"}}
+              >
+                Learn more!
+              </a>
+              <button
+                className="fa-solid fa-heart"
+                style={{marginBottom: "20px", fontSize: "3vh"}}
+                onClick={() => 	actions.setFavoritesCharacters(character.name)}
+              ></button>
             </div>
           </div>
         ))}
@@ -46,5 +61,3 @@ const Characters = () => {
 };
 
 export default Characters;
-
-
