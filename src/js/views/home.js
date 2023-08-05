@@ -27,12 +27,14 @@ export const Home = () => {
           {store.favorites.map((favorite, index) => {
             return (
               <li style={{ color: "rgb(255, 179, 0)" }} key={index}>
-                <h2>
+                <div className="favoritesListGroupSuper d-flex">
+                <h4>
                   {favorite}
-                  <box-icon type="solid" class="bx-lg bx-tada-hover" color="orange" name="trash-alt" onClick={() => handleDelete(index)}>
-                    x
-                  </box-icon>
-                </h2>
+                </h4>
+                  <button type="solid" class="bx-lg bx-tada-hover" color="orange" name="trash-alt" style={{border: "none", backgroundColor: "transparent", marginLeft: "auto"}} onClick={() => handleDelete(index)}>
+                    <i class="fa-solid fa-trash" style={{color: "red"}}></i>
+                  </button>
+                </div>
               </li>
             );
           })}
