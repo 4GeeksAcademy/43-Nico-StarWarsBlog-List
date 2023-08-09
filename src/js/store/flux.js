@@ -40,6 +40,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			  setStore({ favorites: [...store.favorites, characterName] });
 			}
 		  },
+
+		  setFavorites: (newFavorites) => {
+			setStore({ favorites: newFavorites });
+		},
   
 		setFavoritesPlanets: (planet) => {
 		  const store = getStore();

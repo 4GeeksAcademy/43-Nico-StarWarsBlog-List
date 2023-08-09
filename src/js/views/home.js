@@ -19,7 +19,7 @@ export const Home = () => {
 
   return (
     <div className="text-center mt-5">
-      <div className="dropend">
+      {/* <div className="dropend">
         <button className="btn btn-warning dropdown-toggle m-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Favorites {store.favorites.length}
         </button>
@@ -31,7 +31,7 @@ export const Home = () => {
                 <h4>
                   {favorite}
                 </h4>
-                  <button type="solid" class="bx-lg bx-tada-hover" color="orange" name="trash-alt" style={{border: "none", backgroundColor: "transparent", marginLeft: "auto"}} onClick={() => handleDelete(index)}>
+                  <button type="solid" className="bx-lg bx-tada-hover" color="orange" name="trash-alt" style={{border: "none", backgroundColor: "transparent", marginLeft: "auto"}} onClick={() => handleDelete(index)}>
                     <i class="fa-solid fa-trash" style={{color: "red"}}></i>
                   </button>
                 </div>
@@ -39,7 +39,7 @@ export const Home = () => {
             );
           })}
         </ul>
-      </div>
+      </div> */}
 
       <Characters />
       <div style={{ height: "15vh" }}></div>

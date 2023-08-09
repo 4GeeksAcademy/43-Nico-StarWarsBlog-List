@@ -92,7 +92,7 @@ const CharacterProfile = () => {
 
       <div style={{color: 'white', backgroundColor: 'white', height: '10vh', width: '2px'}}></div>
       <p>Homeworld:<br></br><Link to={`/planets/${homeworld.split("/").filter(Boolean).pop()}`}>
-      Click para ir al planeta donde vive
+      Click to go to the planet where he lives
       </Link></p>
 
       <div style={{color: 'white', backgroundColor: 'white', height: '10vh', width: '2px'}}></div>

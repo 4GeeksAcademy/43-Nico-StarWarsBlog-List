@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/Character.css"
 import { Context } from '../store/appContext.js';
 import { useContext } from 'react';
-import {  useNavigate } from 'react-router-dom';
+import {  Link, useNavigate } from 'react-router-dom';
 
 const Characters = ({ addToFavorites }) => {
   const [characters, setCharacters] = useState([]);
@@ -40,13 +40,13 @@ const Characters = ({ addToFavorites }) => {
             <p>Gender: {character.gender}</p>
             <p>Height: {character.height}</p>
             <div style={{justifyContent: "center", textAlign: "center"}}>
-              <a
-                href={`/characters/${character.uid}`}
+              <Link
+                to={`/characters/${character.uid}`}
                 className="btn1 btn-dark"
                 style={{ marginRight: "50px", color: "yellow"}}
               >
                 Learn more!
-              </a>
+              </Link>
               <button
                 className="fa-solid fa-heart"
                 style={{marginBottom: "20px", fontSize: "3vh"}}
